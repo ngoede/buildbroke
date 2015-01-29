@@ -1,5 +1,5 @@
 server {
         location / {
-                root /data/www;
+                root /data/www/site;
         }
 }
