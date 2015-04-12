@@ -3,5 +3,15 @@ task :rebuild do
 end
 
 task :deploy => :rebuild do
-  sh "rsync -avz src/_site/* azureuser@buildbroke.com:/data/www/site"
+  deploy("azureuser@buildbroke.com")
+end
+
+namespace :local do
+  task :deploy => :rebuild do
+    deploy("vagrant@vagrantserver")
+  end
+end
+
+def deploy(destination)
+  sh "rsync -avz src/_site/* #{destination}:/data/www/site"
 end
