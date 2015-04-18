@@ -4,6 +4,7 @@ title:  "Using Resharper to Refactor Static Methods or Properties Into Instance 
 categories: refactoring resharper
 ---
 This is an example of how you can combine a bunch of smaller automated refactorings to achieve an effect for which there is no automated refactoring in a safe and non-manual way.
+*Note: All short cut keys given are with Resharper configured with the Visual Studio hotkey choice*
 
 If you see the following sort of code:
 
