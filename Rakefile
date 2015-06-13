@@ -3,7 +3,7 @@ task :rebuild do
 end
 
 task :deploy => :rebuild do
-  deploy("azureuser@buildbroke.com")
+  deploy("azureuser@direct.buildbroke.com")
 end
 
 namespace :local do

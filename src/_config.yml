@@ -5,7 +5,7 @@ description: >
   Thoughts and ideas of one Nick Goede, professional
   software engineer.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://buildbroke.com" # the base hostname & protocol for your site
+url: "https://buildbroke.com" # the base hostname & protocol for your site
 twitter_username: ngoede
 github_username:  ngoede
 
