@@ -1,11 +1,11 @@
 # Site settings
-title: Build Broke
+title: Nick Goede
 email: ngoede@gmail.com
 description: > 
   Thoughts and ideas of one Nick Goede, professional
   software engineer.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://buildbroke.com" # the base hostname & protocol for your site
+url: "https://www.nickgoede.com" # the base hostname & protocol for your site
 twitter_username: ngoede
 github_username:  ngoede
 
