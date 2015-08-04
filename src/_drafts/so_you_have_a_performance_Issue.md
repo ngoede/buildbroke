@@ -4,7 +4,7 @@ title:  "So, You Have a Performance Problem?"
 categories: performance
 ---
 Performance problems in software systems can be very frustrating. They often come about just when you are feeling most successful in your business or product. You have more users or prospects than ever and things are breaking down. There are a number of ways you might have found out about this. Here are a few:
-* Your users are complaing (*Hint: Your performance monitoring might be lacking.*)
+* Your users are complaining (*Hint: Your performance monitoring might be lacking.*)
 * Through your performance monitoring
 * Your system crashes or stops functioning
 
