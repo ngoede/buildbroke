@@ -1,4 +1,2 @@
-.vagrant/**
 .sass-cache
-rvm-installer
-rvm-installer.asc
+_site

@@ -17,4 +17,4 @@ kramdown:
 paginate: 5
 
 gems:
-  [jekyll-sitemap]
+  [jekyll-sitemap, jekyll-paginate]
