@@ -14,7 +14,6 @@ task :serve => :generate do
 end
 
 task :deploy => :generate do
-    sh 'aws iam get-user'
     sh 'aws s3 sync --region us-east-1 --acl public-read --sse --delete ./_site/ s3://www.nickgoede.com'
     sh 'aws configure set preview.cloudfront true'
     sh 'aws cloudfront create-invalidation --distribution-id E2I2RDRYS7RAK0 --paths \'/*\''
