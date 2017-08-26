@@ -14,7 +14,7 @@ task :serve => :generate do
 end
 
 task :deploy => :generate do
+    ENV['AWS_CONFIG_FILE'] = './.aws/config'
     sh 'aws s3 sync --region us-east-1 --acl public-read --sse --delete ./_site/ s3://www.nickgoede.com'
-    sh 'aws configure set preview.cloudfront true'
     sh 'aws cloudfront create-invalidation --distribution-id E2I2RDRYS7RAK0 --paths \'/*\''
 end
