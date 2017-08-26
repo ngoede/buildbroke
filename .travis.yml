@@ -1,7 +1,6 @@
 language: ruby
 before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install -y awscli
+  - pip install awscli
 script:
   - bundle exec rake generate
   - aws s3 sync --region us-east-1 --acl public-read --sse --delete ./_site/ s3://www.nickgoede.com
