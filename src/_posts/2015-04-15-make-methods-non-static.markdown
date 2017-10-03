@@ -44,7 +44,7 @@ public class A
 		}
 	}
 }
-{% endhighlight %}
+{% endhighlight %} <!--more-->
     
 Rebuild, there should be no other changes required at this point for a successful build. Next, to make the method non-static we are going to add a local variable to that method that is an instance of class A as follows:
 
