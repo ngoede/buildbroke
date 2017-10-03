@@ -13,6 +13,8 @@ layout: default
         </h2>
         <div class="post-content">
           {{post.excerpt}}
+          <p>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Read More...</a>
         </div>
       </li>
     {% endfor %}
