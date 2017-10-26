@@ -9,13 +9,13 @@ Some software development processes have specific names for the role that will, 
 
 One of the things that most processes based in agile agree on is that there should be one person in charge of the product that that the team is building and that they should be on the team. Being in charge doesn't mean they should not listen to others on the team but it does mean that they should have the final say on what is valuable for the customers. This requires that the person in this role is in regular conversation with customers(if you have a SaaS product there is no reason that the Product Manager shouldn't be able to talk to actual customers). Also, it requires that the person in question be on the team and to work in collaboration with the rest of the team. Finally, this person needs the support of the company to not be constantly countermanded and to be able to take accountability for their choices both good and bad.
 
-One of the common ways that organizations do this wrong is by trying to split the Product Manager role over multiple people. This can take several forms:
+One of the common ways that organizations do this wrong is by not having Product Management be a function of the team or a member of it. This can take several different forms:
 
 - The Product by Committee
 - The Product/Project Management Split
 - The Absent Product Manager
 
-Each of these is problematic for different reasons and will cause unhappiness, a worse product, longer time to market, and often outright failure. Before I go over each of them I want to remind you that a key role of the Product Manager is to work with the team and customers to figure out the most valuable features to build or enhance in the software and to work with the team to get value to the customers as quickly as possible. Often these are also symptoms of a top down organization and thus the team has no power to adjust itself to adopt a more effective team structure.
+Each of these is problematic for different reasons and will cause unhappiness for the team, a worse product for the customer, longer time to market, and often outright failure deliver a succesful product. Before I go over each of them I want to remind you that a key role of the Product Manager is to work with the team and customers to figure out the most valuable features to build or enhance in the software and to work with the team to get value to the customers as quickly as possible. Often these are also symptoms of a top down organization and thus the team has no power to adjust itself to adopt a more effective team structure.
 
 ## Product by Committee
 
