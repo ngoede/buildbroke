@@ -17,5 +17,5 @@ kramdown:
   input: GFM
 paginate: 5
 
-gems:
+plugins:
   [jekyll-sitemap, jekyll-paginate, jekyll-gist]
