@@ -19,7 +19,7 @@ Interviews serve several different primary purposes:
 
 A great way get started meeting all three of these purposes is to have the candidate do some sort of simulated work activity with their perspective team members. This serves both to help the team evaluate the candidate but also to give the candidate a realistic impression of what working on the team will be like.
 
-## Ideas For Simulated Work Activities
+## Ideas for Simulated Work Activities
 
 My favorite simulated work activity for teams that pair program is to conduct a [pairing interview](https://www.youtube.com/watch?v=x6MnEZlW7pU). If you can the best way to do this is to have the candidate pair with one or two members of the team on actual work the team is doing at the moment. If having them work on actual production code would be problematic then create a task or series of tasks just for interviews. It is _very important_ that these tasks are not brain teasers disguised as programing problems. However, it should be something with a bit of meat so no [Fizz Buzz](http://wiki.c2.com/?FizzBuzzTest) either.
 
@@ -29,14 +29,16 @@ However, if your team doesn't pair program you should not including pairing in t
 
 {% gist adfd1381e4cd03ab70842473ccb98beb %}
 
-The common theme of all of the above are that they allow the candidate to experience the real work or something like it and that they interact with actual team members during the interview. This serves to educate the candidate on the position, provide a realistic opportunity for the team to evaluate their work, and provide for interaction with the team.
+The common theme of all of these suggestions are that they allow the candidate to experience the real work or as close to it as the team can make possible and that they interact with actual team members during the interview. This serves to educate the candidate on the position, provide a realistic opportunity for the team to evaluate their work, and provide for interaction with the team.
 
-## What Else Should Be In The Interview
+## What Else Should be in the Interview
 
-The rest of the interview should consist of making sure the candidate understands the process, making them comfortable, answering any general questions they have about the organization or job, and trying to learn what they value in a position and organization. These are parts are all ready fairly common in interviews so I will not go into detail on them but remember that the purpose is as much about learning about the candidate as it is about them learning about the position and why they should be interested.
+The rest of the interview should consist of helping the candidate understand what the position is, making them comfortable, answering any general questions they have about the organization or job, and trying to learn what they value in a position and organization. These parts are already fairly common in interviews so I will not go into detail about them but remember that the purpose is as much about learning about the candidate as it is about them learning about the position and why they should be interested.
 
-Regardless of exactly how the interview is structured the candidate should be informed in advance what the process will be. This allows them to prepare and potentially ask questions about how the interview will work. As interviewers this is to your benefit as it will reduce nervousness caused by the interview process.
+Regardless of exactly how the interview is structured the candidate should be informed in advance what the process will be. This allows them to prepare and potentially ask questions about how the interview will work. As interviewers this is to your benefit as it will reduce nervousness caused by the interview process and lead to better conversations. It may also lead to some candidates self-selecting to not continue but this is preferable to blindsiding them with an interview they are uncomfortable with.
 
-Lastly, you should endeavor to make a decision on the candidate in a timely manner and allow the candidate to know the results as soon as possible. Candidates that don't hear back in a timely manner will often assume that the result of the interview was a no and that the company does not respect candidates enough to communicate that.
+Lastly, you should make a decision on the candidate in a timely manner and allow the candidate to know the results as soon as possible. Candidates that don't hear back in a timely manner will often assume that the result of the interview was a no and that the company does not respect candidates enough to communicate that. This can lead to having a reputation as not valuing the time of candidates which many people will also take to reflect.
 
-Unfortunately, as Google found out, it is very possible for a interview process you think works well to in fact be no better than chance. As the advice above is based on my direct experiences and the writings of others and not on scientific study you should take it with due skepticism. Even more troubling is the possibility that certain types of interviews may be biased against certain type of candidates that would otherwise be awesome for the position. This is a very serious concern and requires hard work from the industry to learn how to do better. It is my hope that making interviews more like the work is a way to reduce structural bias in the interview but I can not back this up with any kind of data.
+## Final Thoughts and the Future
+
+Unfortunately, as Google found out, it is very possible for an interview process you think works well to in fact be no better than random chance. As the advice above is based on my direct experiences and the writings of others and not on scientific study you should take it with due skepticism. Even more troubling is the possibility that certain types of interviews may be biased against certain type of candidates that would otherwise be awesome for the position. This is a very serious concern and requires hard work from the industry to learn how to do better. It is my hope that making interviews more like the work is a way to reduce structural bias in the interview but I can not back this up with any kind of data.
