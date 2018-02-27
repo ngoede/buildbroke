@@ -1,0 +1,5 @@
+{
+    "default": true,
+    "MD002": { "level": 2 },
+    "line-length": false
+}
