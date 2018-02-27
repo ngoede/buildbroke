@@ -27,7 +27,7 @@ If possible break out some task the team has done in the past and find a way to 
 
 However, if your team doesn't pair program you should not including pairing in the interview as it does not give the candidate a realistic portrayal of the job. Other options include giving the candidate a short non-essential contract(which you should pay them for) then evaluate and discuss their work as you would another team members. If that is not possible another option I have explored is to have the candidate review code(either real or created for the purpose). Ensure that you discuss not just the issues but also how they would deal with them. This is an example of a code review exercise Anthony Sciamanna and I created in the past and taken from [this repository](https://github.com/ngoede/interview-exercise).
 
-<script src="https://gist.github.com/ngoede/adfd1381e4cd03ab70842473ccb98beb.js"></script>
+{% gist adfd1381e4cd03ab70842473ccb98beb %}
 
 The common theme of all of the above are that they allow the candidate to experience the real work or something like it and that they interact with actual team members during the interview. This serves to educate the candidate on the position, provide a realistic opportunity for the team to evaluate their work, and provide for interaction with the team.
 

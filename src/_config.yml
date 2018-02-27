@@ -18,4 +18,4 @@ kramdown:
 paginate: 5
 
 gems:
-  [jekyll-sitemap, jekyll-paginate]
+  [jekyll-sitemap, jekyll-paginate, jekyll-gist]
