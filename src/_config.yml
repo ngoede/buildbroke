@@ -2,8 +2,7 @@
 title: Nick Goede
 email: ngoede@gmail.com
 description: > 
-  Thoughts and ideas of one Nick Goede, professional
-  software engineer.
+  Thoughts on software development, product development, and teamwork.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://www.nickgoede.com" # the base hostname & protocol for your site
 twitter_username: ngoede
