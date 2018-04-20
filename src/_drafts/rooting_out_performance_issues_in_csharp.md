@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Rooting Out Performance Issues in C# Code"
+categories: development performance
+---
+I have noticed in working with a lot of developers that many of them have never been taught how to properly find performance issues in code using a profiler. This is a shame because often the alternatives to using a profiler are either writing your own poor version using various logging and timing statements or guessing where performance issues lay. Profilers are not scary and once you have narrowed down a performance problem to a particular process are far and away the best tools we have available to us at the moment to track down the problematic code/design. If you don't have data to back up a particular area of code being a performance problem then in my experience it is very likely you are wrong.
+
+There is a profiler built into Microsoft Visual Studio but I have a lot more experience using the JetBrains DotTrace profiler so I am going to use the interface from that for my examples. The concepts are fairly universal although some of the names and options will obviously be different.
+
+If you are profiling a complex multithreaded application like an MVC app one of the first things you will notice is that there may be twenty plus threads you could view profiling information for. Often, for a web app, only one of these threads will be of interest for a given action you are profiling. So your first task is to figure out which of these threads is the correct one to examine. Newer versions of DotTrace have a neat feature where you can see a timeline of activity and a lot of time the correct thread will have a nice obvious block of activity on this timeline.
+
+So assuming you have clicked on the correct thread you will now see a sort of stack trace with timings attached to each function call in the tree. What you will want to do is follow the tree downwards by the branch that leads to the largest amount of time. At some point you will either hit the leaves of the tree or find a point where multiple branches represent a significant amount of time spent. Things to watch for also include functions that were called a large number of times. These are often the result of that function call being in a loop. Sometimes you will get lucky and that function is returning the same result for every iteration of the loop and therefore can be pulled outside it. 
