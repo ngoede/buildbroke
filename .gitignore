@@ -1,2 +1,4 @@
 .sass-cache
 _site
+.terraform
+terraform.tfstate
