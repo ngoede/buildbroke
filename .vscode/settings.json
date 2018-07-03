@@ -1,5 +1,8 @@
 {
     "spellright.ignoreRegExpsByClass": {
         "markdown": [ "/{% gist .* %}/g" ]
-    }
+    },
+    "cSpell.words": [
+        "Menlo"
+    ]
 }
