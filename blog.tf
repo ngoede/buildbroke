@@ -2,8 +2,15 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "blog_s3" {
+data "aws_acm_certificate" "blog_cert" {
+  domain = "www.nickgoede.com"
+}
+
+resource "aws_s3_bucket" "blog" {
   bucket = "www.nickgoede.com"
+
+  acl           = "private"
+  force_destroy = false
 
   website {
     index_document = "index.html"
@@ -13,7 +20,7 @@ resource "aws_s3_bucket" "blog_s3" {
 
 resource "aws_cloudfront_distribution" "blog_distribution" {
   origin {
-    domain_name = "${aws_s3_bucket.blog_s3.bucket_regional_domain_name}"
+    domain_name = "${aws_s3_bucket.blog.bucket_regional_domain_name}"
     origin_id   = "blogOrigin"
 
     s3_origin_config {
@@ -34,9 +41,13 @@ resource "aws_cloudfront_distribution" "blog_distribution" {
     }
   }
 
+  viewer_certificate {
+    acm_certificate_arn = "${data.aws_acm_certificate.blog_cert.arn}"
+  }
+
   default_cache_behavior {
-    allowed_methods  = ["GET", "HEAD"]
-    cached_methods   = ["GET", "HEAD"]
+    allowed_methods  = ["HEAD", "GET"]
+    cached_methods   = ["HEAD", "GET"]
     target_origin_id = "blogOrigin"
 
     forwarded_values {
