@@ -20,12 +20,16 @@ resource "aws_s3_bucket" "blog" {
 
 resource "aws_cloudfront_distribution" "blog_distribution" {
   origin {
-    domain_name = "${aws_s3_bucket.blog.bucket_regional_domain_name}"
+    domain_name = "${aws_s3_bucket.blog.website_endpoint}"
     origin_id   = "S3-www.nickgoede.com"
 
-    s3_origin_config {
-      origin_access_identity = "origin-access-identity/cloudfront/ABCDEFG1234567"
+    custom_origin_config {
+      http_port = 80
+      https_port = 443
+      origin_protocol_policy = "http-only"
+      origin_ssl_protocols = ["TLSv1", "TLSv1.1", "TLSv1.2"]
     }
+
   }
 
   enabled         = true
@@ -43,13 +47,15 @@ resource "aws_cloudfront_distribution" "blog_distribution" {
 
   viewer_certificate {
     acm_certificate_arn = "${data.aws_acm_certificate.blog_cert.arn}"
+    ssl_support_method  = "sni-only"
   }
 
   default_cache_behavior {
     allowed_methods  = ["HEAD", "GET"]
     cached_methods   = ["HEAD", "GET"]
     target_origin_id = "S3-www.nickgoede.com"
-    compress = true
+    compress         = true
+
     forwarded_values {
       query_string = false
 
