@@ -2,8 +2,14 @@ provider "aws" {
   region = "us-east-1"
 }
 
-data "aws_acm_certificate" "blog_cert" {
-  domain = "www.nickgoede.com"
+resource "aws_acm_certificate" "blog_cert" {
+  domain_name = "www.nickgoede.com"
+  subject_alternative_names = ["nickgoede.com"]
+  validation_method = "DNS"
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_s3_bucket" "blog" {
@@ -46,7 +52,7 @@ resource "aws_cloudfront_distribution" "blog_distribution" {
   }
 
   viewer_certificate {
-    acm_certificate_arn = "${data.aws_acm_certificate.blog_cert.arn}"
+    acm_certificate_arn = "${aws_acm_certificate.blog_cert.arn}"
     ssl_support_method  = "sni-only"
   }
 
