@@ -21,7 +21,7 @@ resource "aws_s3_bucket" "blog" {
 resource "aws_cloudfront_distribution" "blog_distribution" {
   origin {
     domain_name = "${aws_s3_bucket.blog.bucket_regional_domain_name}"
-    origin_id   = "blogOrigin"
+    origin_id   = "S3-www.nickgoede.com"
 
     s3_origin_config {
       origin_access_identity = "origin-access-identity/cloudfront/ABCDEFG1234567"
@@ -48,8 +48,8 @@ resource "aws_cloudfront_distribution" "blog_distribution" {
   default_cache_behavior {
     allowed_methods  = ["HEAD", "GET"]
     cached_methods   = ["HEAD", "GET"]
-    target_origin_id = "blogOrigin"
-
+    target_origin_id = "S3-www.nickgoede.com"
+    compress = true
     forwarded_values {
       query_string = false
 
