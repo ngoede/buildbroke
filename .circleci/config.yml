@@ -1,18 +1,8 @@
-# Ruby CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-ruby/ for more details
-#
 version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
       - image: circleci/ruby:2.4.1-node-browsers
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
 
     working_directory: ~/repo
 
@@ -36,5 +26,22 @@ jobs:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-      # Build Site
-      - run: bundle exec rake generate
+      - run: 
+          name: Build site
+          command: bundle exec rake generate
+  deploy:
+    docker:
+      - image: circleci/python
+
+    working_directory: ~/repo
+
+    steps:
+      - run:
+          name: Install awscli
+          command: sudo pip install awscli
+      - run:
+          name: Deploy to bucket
+          command: aws s3 sync --region us-east-1 --acl public-read --sse --delete ./_site/ s3://www.nickgoede.com
+      - run:
+          name: Invlidate Cloudfront cache
+          command: aws cloudfront create-invalidation --distribution-id E2I2RDRYS7RAK0 --paths '/*'
