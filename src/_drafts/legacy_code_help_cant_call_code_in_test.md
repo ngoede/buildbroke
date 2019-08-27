@@ -13,6 +13,12 @@ This brings us to one of the core tenets of making any sort of improvement to a 
 
 ## Explanation of Example of Problems Calling Code You Want To Change ##
 
+There are a number of the common problems related to trying to call legacy code in tests when it wasn't written with tests in mind. Typically, we are talking about code in a typical Object Oriented style language so we will start with problems related to constructing the object itself in a test harness.
+
+Roughly speaking there are two major issues you may run into constructing an object in a test. The first is that the object may require a dependency be passed in that itself can not be constructed in a test and can not be easily substituted for. Often this is a concrete dependency(NOTE: Find a definition to link to). The second is that the object does something problematic in the constructor itself. Examples of this could include construction of a problematic dependency inline, hitting the database, or using a global variable. As a general rule, the more code you see inside the constructor and the more concrete instead of abstracted dependencies it has the more likely it is you will have problems constructing it in a test.
+
+The next source of problems we encounter is in the method or function we want to write a test for. Some of these problems mirror the constructor issues such as use of problematic dependencies. However, you will also encounter issues that people not experienced in writing unit tests in code will never give a second thought to. These include things like using built-ins in the language for getting the current date or time, generating random numbers, or using framework constructs. All of these either need to be controlled within the context of the test or require that we harness way more of the system in a test than we like. Our tests, for instance, shouldn't have to run with in the context of web server.
+
 ## Sprout Method ##
 
 ## Sprout Class ##
