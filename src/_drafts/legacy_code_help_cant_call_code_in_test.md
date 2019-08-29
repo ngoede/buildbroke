@@ -26,10 +26,18 @@ One of the hardest things about working with Legacy Code is that we don't want t
 1. We may need temporary tests that don't meet our normal expectations or standards for tests. They might be slow or depend on things we would rather they don't. They might even require manual setup or be entirely manual. This is okay because these tests serve as scaffolding to help us refactor safely so we can write tests we will keep.
 2. We may need to carefully perform a minimal amount of refactoring type changes without the safety net of tests. In the event we need to use this it is important we lean on our tools as much as possible and take very small steps.
 
-## Sprout Method
+Tests that are used as scaffolding to support making changes that will allow us to write tests we are happy keeping are often called characterization or pining tests. Unlike normal unit tests these tests are less focused on specifying what the code should do and more on locking down what it currently does. This is because, with legacy code we are assuming, other than the change we want to make, that it works correctly in production. Therefore, for now, we just want to find out what the code does and create tests that try to lock that down so that when we refactor the code to allow unit tests we don't change the behavior in the process. Sometimes you will find bugs during this process and it is important to note them but wait until you are past this stage to address them. Right now we just want to lock down functionality and then refactor to support writing unit tests. We can then drive those bug fixes with unit tests and be confident we are only making the changes we intend.
 
-## Sprout Class
+Of course all of this needs to be approached pragmatically. We want to write tests that lock down as little code as possible allowing us to refactor and make it possible to make the changes we need to make. This means you shouldn't just write tests for code you don't need to change and you should try to isolate and do this with the smallest bit of code you possibly can and still make your changes.
 
-## Extract and Override
+## Some Tools
+
+The following are some tools that will help you out of difficult situations involving code you can't call or objects you can't construct in test. They do so by either creating, quickly, a new isolated place to add your changes or allow you to separate out the parts that interfere with testing so you can focus on the parts you need to change and can write tests for. All of them will look like they move the design backwards or don't fix the bigger problems. This is true. However, they start to create areas of code that we can safely refactor and this redesign. As you continue to address legacy code and write tests larger and large parts of the code will become open to redesign.
+
+### Sprout Method
+
+### Sprout Class
+
+### Extract and Override
 
 ## Only the First Step
