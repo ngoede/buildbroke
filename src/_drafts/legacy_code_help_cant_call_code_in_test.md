@@ -36,6 +36,8 @@ The following are some tools that will help you out of difficult situations invo
 
 ### Sprout Method
 
+{% gist 7de4d2909a4cf583d61c372888649b24 %}
+
 ### Sprout Class
 
 ### Extract and Override
