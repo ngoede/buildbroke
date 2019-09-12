@@ -36,7 +36,16 @@ The following are some tools that will help you out of difficult situations invo
 
 ### Sprout Method
 
+The first of these tools that we are going to discuss is Sprout Method. It is applicable when you need to make a modification inside an existing logic flow, like a large method for instance, that you either can't call in a test harness easily or that is complex in a way that makes it hard to test the effect of your intended changes. Sprout method allows you to use tests to drive out the new functionality without getting bogged down in refactoring the existing method. However, this is also its downside. It lets you write new code but doesn't improve the existing code. However, if the alternative is writing new code without tests than the trade-off is clearly worth it. This can be a good way for a team to get started working with legacy code without getting bogged down in make existing code testable.
+
+The first step of applying Sprout Method is to identify the place in the existing code where you need to make a change. Often this will involve taking some variable or data that the existing code is using, processing it in some fashion, and then continuing on with the existing logic flow from there. In the following code you can see example(much simpler than is realistic of course) of code where we have identified the location where we want the modification to occur.
+
 {% gist 7de4d2909a4cf583d61c372888649b24 %}
+
+Next, we add the call to the new method we want to make in the spot it is needed, passing existing variables required for the new logic (a small number, if not see Sprout Class bellow) as parameters and setting the return value to an existing variable if needed. Then create the new method, ideally asking your tool such as an IDE to do it for you.
+{% gist 59c96d313c1492cffd6cf9af123620a9 %}
+
+Now, we should have a method that is empty except for possibly returning something to make the compiler happy. If it is not already make the method public and proceed to drive out its logic with tests refactoring along the way.
 
 ### Sprout Class
 
