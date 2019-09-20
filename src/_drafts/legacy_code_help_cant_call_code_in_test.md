@@ -49,6 +49,8 @@ Now, we should have a method that is empty except for possibly returning somethi
 
 ### Sprout Class
 
+This next tool is very similar to Spout Method. However, instead of creating a new method we will create a whole new class. One of the more obvious reasons to use this over sprout method is when we cannot find a straightforward way to make the original class that we want to modify able to be instantiated in a test harness. 
+
 ### Extract and Override
 
 ## Only the First Step
