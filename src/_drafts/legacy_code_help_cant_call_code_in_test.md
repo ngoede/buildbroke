@@ -43,13 +43,16 @@ The first step of applying Sprout Method is to identify the place in the existin
 {% gist 7de4d2909a4cf583d61c372888649b24 %}
 
 Next, we add the call to the new method we want to make in the spot it is needed, passing existing variables required for the new logic (a small number, if not see Sprout Class bellow) as parameters and setting the return value to an existing variable if needed. Then create the new method, ideally asking your tool such as an IDE to do it for you.
+
 {% gist 59c96d313c1492cffd6cf9af123620a9 %}
 
 Now, we should have a method that is empty except for possibly returning something to make the compiler happy. If it is not already make the method public and proceed to drive out its logic with tests refactoring along the way.
 
 ### Sprout Class
 
-This next tool is very similar to Spout Method. However, instead of creating a new method we will create a whole new class. One of the more obvious reasons to use this over sprout method is when we cannot find a straightforward way to make the original class that we want to modify able to be instantiated in a test harness. 
+This next tool is very similar to Spout Method. However, instead of creating a new method we will create a whole new class. One of the more obvious reasons to use this over sprout method is when we cannot find a straightforward way to make the original class that we want to modify able to be instantiated in a test harness.
+
+The first step in Sprout class is the same as Spout Method, identify the place in the existing code where we need to make our change or add new code. Then, create a new class that will hold this code. Now, identify if any existing dependencies created by the old class will be needed by the new. Once this is done new up the new class at the spot identified previously and pass in any relevant dependencies to the constructor. Now, add a method to the new class that will do the work and call it from the existing code passing in any date it will require as method parameters and using the return value to set an existing variable as required. Finally, use TDD to develop the new method in the new class.
 
 ### Extract and Override
 
