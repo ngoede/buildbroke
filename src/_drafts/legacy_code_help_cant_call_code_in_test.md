@@ -56,4 +56,10 @@ The first step in Sprout class is the same as Spout Method, identify the place i
 
 ### Extract and Override
 
+Extract and Override is in some ways the opposite of the previous two techniques. Previously, we got around troublesome code by taking our new code and putting it outside the grasp of the problematic code but with extract and override we instead remove the problematic code from the rest of the code and then make our changes with tests. This approach serves us best when either a single dependency(or a very small number of them anyway) is the problem or a small number of lines of code are the problem.
+
+It works by identifying this code, such as a call to the database or code to get the current date and time, and moving it carefully to its own method. Then, we can inherit from the the original class and replace the untestable code with something that either tracks calls to that method(if we need to check that in the test) or does nothing. Then we can write tests for the original code(just enough to let us start changing it) and then refactor the code and TDD the new changes.
+
+Follow up steps might include extracting the new method as a separate dependency that can be injected into the class. This is particularly useful to help us break down large objects or if the functionality of the new dependency would be useful elsewhere.
+
 ## Only the First Step
